@@ -1,0 +1,4 @@
+#用户名称
+loginName:
+  type:id
+  value:"loginName"

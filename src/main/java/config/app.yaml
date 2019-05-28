@@ -1,0 +1,9 @@
+#手机配置信息
+Driver1:
+  platformVersion:"5.1"
+  deviceName:"MEIZU_MX5"
+  udid:"85OBBM6224MV"
+  appPackage:"com.hrcfc.hrApp.custManager"
+  appActivity:".base.LaunchActivity_"
+  platformName:"Android"
+  unicodeKeyboard:"true"
