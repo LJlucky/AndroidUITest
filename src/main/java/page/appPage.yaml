@@ -1,4 +1,76 @@
-#用户名称
-loginName:
+#广告页
+image:
   type:id
-  value:"loginName"
+  value:"com.hrcfc.hrApp.custManager:id/image"
+#发现新版本
+upgrade_title:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/upgrade_title"
+#暂不升级
+upgrade_cancel:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/upgrade_cancel"
+#立即升级
+upgrade_btn:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/upgrade_btn"
+#我的
+tabText_wode:
+  type:xpath
+  value:"//*[@text='我的']"
+#用户姓名
+user_name:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/user_name"
+#用户背景
+user_bg:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/user_bg"
+#退出登录按钮
+user_exit_text:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/user_exit_text"
+#退出登录确认弹框
+loading_layout:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/loading_layout"
+#退出登录确认弹框-确认
+outLogin_left_btn:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/left_btn"
+#退出登录确认弹框-取消
+outLogin_right_btn:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/right_btn"
+#登录/注册
+login_btn:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/login_btn"
+#您还未登录
+not_login_tip:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/not_login_tip"
+#登录_手机号码
+input_phone_ed:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/input_phone_ed"
+#登录_获取验证码
+btn_msg_get_code:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/btn_msg_get_code"
+#登录_短信验证码
+input_msg_code:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/input_msg_code"
+#登录_短信验证码登录按钮
+msg_login_btn:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/login_btn"
+#登录_错误提示
+login_error:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/login_error"
+#个人设置-手机号码
+user_phone_no_text:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/user_phone_no_text"

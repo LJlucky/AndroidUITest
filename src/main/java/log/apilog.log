@@ -1,0 +1,6 @@
+2019-05-31 17:26:52 037 INFO  ConfigUtil:60 - 加载log4j.prpperties配置文件成功
+2019-05-31 17:26:52 047 INFO  ConfigUtil:23 - 开始加载appPage.yaml页面元素信息
+2019-05-31 17:26:52 172 INFO  ConfigUtil:23 - 开始加载app.yamlDriver配置信息
+2019-05-31 17:27:48 094 INFO  LoginHandle:33 - 存在升级弹窗，进行取消操作
+2019-05-31 17:27:50 076 INFO  LoginHandle:38 - 点击【我的】，进入个人中心
+2019-05-31 17:27:57 125 INFO  AppiumUI:206 - 验证码已成功发送至13916661001请查收
