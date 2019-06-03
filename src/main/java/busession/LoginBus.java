@@ -19,7 +19,7 @@ public class LoginBus {
         loginHandle.swipImage();
         loginHandle.clickMy();
         loginHandle.checkLogin();
-        loginHandle.checkPhoneNumber("13916661001");
+        loginHandle.checkPhoneNumber("11916661001");
     }
 
 

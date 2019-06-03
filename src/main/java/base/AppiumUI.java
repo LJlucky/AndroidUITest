@@ -200,10 +200,16 @@ public class AppiumUI {
     public String getToastText(String key) {
         String text = null;
         WebDriverWait wait = new WebDriverWait(driver, 1);
-        WebElement target = wait.until(
-                ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@text,'" + key + "')]")));
-        text = target.getText();
-        Log.info(text);
+        try{
+            WebElement target = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@text,'" + key + "')]")));
+            text = target.getText();
+            Log.info(text);
+        }catch (Exception e){
+            System.out.println("没找到关注，继续执行");
+
+        }
+
         return text;
     }
 
