@@ -14,17 +14,17 @@ public class App {
     public static void main(String[] args) {
 
         ConfigUtil.LoadLogProperties();
-        try {
-            ConfigUtil.LoadYaml("appPage.yaml","\\src\\main\\java\\page\\","页面元素信息","elementYaml");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            ConfigUtil.LoadYaml("app.yaml","\\src\\main\\java\\config\\","Driver配置信息","driverYaml");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            ConfigUtil.LoadYaml("appPage.yaml","\\src\\main\\java\\page\\","页面元素信息","elementYaml");
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            ConfigUtil.LoadYaml("app.yaml","\\src\\main\\java\\config\\","Driver配置信息","driverYaml");
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         InitAppium a = new InitAppium();
         a.appStart();
 //        a.getValue("Driver1","appActivity");
@@ -32,8 +32,8 @@ public class App {
 //        loginHandle.swipImage();
 //        loginHandle.clickMy();
 
-        LoginBus loginBus = new LoginBus(a.driver);
-        loginBus.LoginPage();
+//        LoginBus loginBus = new LoginBus(a.driver);
+//        loginBus.LoginPage();
 
 
 

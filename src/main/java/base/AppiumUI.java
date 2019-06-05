@@ -81,6 +81,7 @@ public class AppiumUI {
             driver.findElement(by);
             return true;
         } catch (NoSuchElementException ex) {
+            Log.info("元素不存在");
             return false;
         }
     }
@@ -206,8 +207,8 @@ public class AppiumUI {
             text = target.getText();
             Log.info(text);
         }catch (Exception e){
-            System.out.println("没找到关注，继续执行");
-
+            System.out.println("没找到Toast弹出，继续执行下一步操作");
+            System.out.println(text);
         }
 
         return text;

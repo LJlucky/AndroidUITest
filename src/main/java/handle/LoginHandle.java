@@ -4,7 +4,7 @@ import base.AppiumUI;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.apache.log4j.Logger;
-import org.aspectj.weaver.ast.And;
+import org.testng.Assert;
 
 public class LoginHandle extends AppiumUI {
     private final static Logger Log = Logger.getLogger(LoginHandle.class);
@@ -26,7 +26,7 @@ public class LoginHandle extends AppiumUI {
     public void clickMy() {
         try {
             Thread.sleep(5000);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         if (isElementExist(getBy("upgrade_title"))) {
@@ -53,7 +53,7 @@ public class LoginHandle extends AppiumUI {
     }
 
     //退出登录操作
-    public void outLogin() {
+    private void outLogin() {
         AndroidElement user_bg = getElement("user_bg");
         click(user_bg);
         if (isElementExist(getBy("user_phone_no_text"))) {
@@ -79,15 +79,38 @@ public class LoginHandle extends AppiumUI {
     }
 
     //手机号码格式验证
-    public void checkPhoneNumber(String PhoneNumber) {
+    public void checkPhoneNumber(String PhoneNumber, String errorMsg) {
         AndroidElement input_phone_ed = getElement("input_phone_ed");
-        sendKeys(input_phone_ed,PhoneNumber);
+        sendKeys(input_phone_ed, PhoneNumber);
         AndroidElement btn_msg_get_code = getElement("btn_msg_get_code");
         click(btn_msg_get_code);
-        getToastText("验证码已成功发送");
-//        AndroidElement login_error = getElement("login_error");
-//        String text = getText(login_error);
-//        return text;
+        String text1 = getToastText("验证码已成功发送");
+//        getToastText("验证码已成功发送");
+        if (text1 != null) {
+            System.out.println("登录成功！！！！");
+        } else {
+            AndroidElement login_error = getElement("login_error");
+            String text = getText(login_error);
+            Assert.assertEquals(text, errorMsg, "验证手机号码格式");
+        }
+    }
+
+    public void checkMsg(String num, String errorMsg){
+        AndroidElement input_msg_code = getElement("input_msg_code");
+        if(num != null){
+            sendKeys(input_msg_code,num);
+            click(getElement("msg_login_btn"));
+        }else {
+            click(getElement("msg_login_btn"));
+        }
+
+        if(isElementExist(getBy("qr_code_sign"))){
+            Log.info("登录成功！！！");
+        }else{
+            AndroidElement login_error = getElement("login_error");
+            String text = getText(login_error);
+            Assert.assertEquals(text, errorMsg, "验证手机验证码");
+        }
     }
 
 }

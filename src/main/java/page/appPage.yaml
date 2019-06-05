@@ -58,7 +58,7 @@ input_phone_ed:
 btn_msg_get_code:
   type:id
   value:"com.hrcfc.hrApp.custManager:id/btn_msg_get_code"
-#登录_短信验证码
+#登录_短信验证码输入
 input_msg_code:
   type:id
   value:"com.hrcfc.hrApp.custManager:id/input_msg_code"
@@ -74,3 +74,39 @@ login_error:
 user_phone_no_text:
   type:id
   value:"com.hrcfc.hrApp.custManager:id/user_phone_no_text"
+#个人设置-个人设置图标
+qr_code_sign:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/qr_code_sign"
+#注册-成功弹窗
+loading_layout1:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/loading_layout"
+#注册-成功获取弹窗内容（恭喜您，注册成功）
+loading_title:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/title"
+#注册-成功-以后设置
+btn_AfterSetting:
+  type:xpath
+  value:"//*[@text='以后设置']"
+#注册-成功-去设置
+btn_NowSetting:
+  type:xpath
+  value:"//*[@text='去设置']"
+#设置密码-title
+title_SettingPassword:
+  type:xpath
+  value:"//*[@text='设置密码']"
+#设置密码-输入密码
+input_SettingPassword:
+  type:xpath
+  value:"//*[@text='请输入新密码']"
+#设置密码-再次输入密码
+input_AgainSettingPassword:
+  type:xpath
+  value:"//*[@text='请再次输入新密码']"
+#设置密码-提交
+btn_commit:
+  type:id
+  value:"com.hrcfc.hrApp.custManager:id/commit"

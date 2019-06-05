@@ -4,7 +4,9 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utils.Common;
 import utils.ConfigUtil;
 
 import java.io.FileNotFoundException;
@@ -17,20 +19,32 @@ public class InitAppium {
     public AndroidDriver driver;
     public String phoneDriver = "Driver1";
 
+    Map<String, Map<String, String>> ml = null;
+
+
+
     @BeforeSuite
     public void appStart() {
-//        ConfigUtil.LoadLogProperties();
-//        try {
-//            ConfigUtil.LoadYaml("appPage.yaml","\\src\\main\\java\\page\\","页面元素信息","elementYaml");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//        try {
-//            ConfigUtil.LoadYaml("app.yaml","\\src\\main\\java\\config\\","Driver配置信息","driverYaml");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
+        ConfigUtil.LoadLogProperties();
+        try {
+            ConfigUtil.LoadYaml("appPage.yaml","\\src\\main\\java\\page\\","页面元素信息","elementYaml");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            ConfigUtil.LoadYaml("app.yaml","\\src\\main\\java\\config\\","Driver配置信息","driverYaml");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        {
+            try {
+                ml = ConfigUtil.getYaml("driverYaml");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -69,15 +83,19 @@ public class InitAppium {
         return driver;
     }
 
-    Map<String, Map<String, String>> ml = null;
-
-    {
-        try {
-            ml = ConfigUtil.getYaml("driverYaml");
-        } catch (FileNotFoundException e) {
+    @AfterSuite
+    public void stopDriver() {
+        try{
+            Thread.sleep(5000);
+        }catch (InterruptedException e){
             e.printStackTrace();
         }
+        Common.copyReport();
+        driver.quit();
+
     }
+
+
 
     public String getValue(String driver, String key) {
         String value = null;
